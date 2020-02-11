@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/hello', function () {
+    return view('hello',['name'=> 'DTA','msg' => 'Bienvenu à la']);
+});
+
+
+Route::get('/hello/{name}', function ($name) {
+    return view('hello',['name'=>$name, 'msg' => 'Hello']);
+});
