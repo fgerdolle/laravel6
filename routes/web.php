@@ -28,3 +28,6 @@ Route::get('/hello/{name}', function ($name) {
 Route::get('/hello_array', function () {
     return view('hello_array',['names'=>['Franck', 'Vincent' , 'Thibaut']]);
 });
+
+
+Route::get('/student/{firstName}/{lastName}' , 'StudentController@index');
