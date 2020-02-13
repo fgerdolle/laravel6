@@ -23,3 +23,8 @@ Route::get('/hello', function () {
 Route::get('/hello/{name}', function ($name) {
     return view('hello',['name'=>$name, 'msg' => 'Hello']);
 });
+
+
+Route::get('/hello_array', function () {
+    return view('hello_array',['names'=>['Franck', 'Vincent' , 'Thibaut']]);
+});
