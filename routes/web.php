@@ -31,3 +31,9 @@ Route::get('/hello_array', function () {
 
 
 Route::get('/student/{firstName}/{lastName}' , 'StudentController@index');
+
+Route::get('/name_url' , 'NameURLController@sayHello');
+
+Route::get('users', 'UsersController@create');
+Route::post('users', 'UsersController@store')->name('PostCreateUser');
+
