@@ -23,6 +23,12 @@
                         @enderror
                     </div>
                     <div class="form-group">
+                        <input type="password" class="form-control  @error('password') is-invalid @enderror" name="password" id="password" placeholder="Votre mot de passe" value="{{ old('password') }}">
+                        @error('password')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
                         <textarea class="form-control  @error('message') is-invalid @enderror" name="message" id="message" placeholder="Votre message">{{ old('message') }}</textarea>
                         @error('message')
                             <div class="invalid-feedback">{{ $message }}</div>
