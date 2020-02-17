@@ -41,3 +41,6 @@ Route::get('contact', 'ContactController@create');
 Route::post('contact', 'ContactController@store');
 
 Route::get('/session/{name}' , 'SessionController@sayHello');
+
+Route::get('/usersMVC' , 'UsersMVCController@UsersList');
+Route::get('/usersMVC/{id}' , 'UsersMVCController@show');

@@ -45,7 +45,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 50px;
             }
 
             .links > a {
@@ -76,9 +76,6 @@
                         @yield('content')
                     </div>
                 </div>
-
-
-                
         </div>
     </body>
 </html>
