@@ -37,3 +37,5 @@ Route::get('/name_url' , 'NameURLController@sayHello');
 Route::get('users', 'UsersController@create');
 Route::post('users', 'UsersController@store')->name('PostCreateUser');
 
+Route::get('contact', 'ContactController@create');
+Route::post('contact', 'ContactController@store');
