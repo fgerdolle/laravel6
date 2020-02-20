@@ -8,10 +8,10 @@
                 @foreach ($contacts as $contact)
                 <tr>
                     <td><a href="{{url('contactlist/'.$contact->id)}}">{{$contact->id}}</a></td>
-                    <td>{{$contact->name}}</td>
+                    <td>{{$contact->firstName}}</td>
+                    <td>{{$contact->lastName}}</td>
                     <td>{{$contact->email}}</td>
-                    <td>{{$contact->phone}}</td>
-                    <td>{{$contact->adress}}</td>
+                
                 </tr>   
                 @endforeach
             </table>

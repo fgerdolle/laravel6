@@ -15,13 +15,12 @@ class CreateContactsTable extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->char('name', 100)->charset('utf8');
+            $table->char('firstName', 100)->charset('utf8');
+            $table->char('lastName', 100)->charset('utf8');
             $table->string('email')->unique();
-            $table->char('phone', 15);
-            $table->char('adress', 100)->charset('utf8');
+            $table->char('password', 100)->charset('utf8');
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

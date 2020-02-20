@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ContactID;
 use App\Contacts;
+use App\Services\ContactsService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -17,24 +18,24 @@ class ContactsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'bail|required|between:5,20|alpha',
+            'firstName' => 'bail|required|between:5,20|alpha',
+            'lastName' => 'bail|required|between:5,20|alpha',
             'email' => 'bail|required|email',
-            'phone' => 'bail|required|between:5,20',
-            'adress' => 'bail|required|max:500'
+            'password' => 'bail|required|between:5,20|alpha'
         ]);
         $contact = new \App\Contacts;
-        $contact->name = $request->name;
+        $contact->firstName = $request->firstName;
+        $contact->lastName = $request->lastName;
         $contact->email = $request->email;
-        $contact->phone = $request->phone;
-        $contact->adress = $request->adress;
+        $contact->password = $request->password;
         $contact->save();
         return "C'est bien enregistré !";
     
     }
 
-    public function List()
+    public function List(ContactsService $contactsService)
     {
-        $contacts = Contacts::all();
+        $contacts = $contactsService->listContacts();
 
         return view('contactview', ['contacts' => $contacts]);
     }
